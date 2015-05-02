@@ -1,0 +1,29 @@
+{
+  "name": "reelib",
+  "homepage": "https://github.com/reelyactive/reelib/",
+  "author": "reelyActive <webdev@reelyactive.com>",
+  "description": "Library for common reelyActive methods.  We believe in an open Internet of Things.",
+  "keywords": [
+    "reelyActive",
+    "IoT",
+    "library"
+  ],
+  "version": "0.0.1",
+  "engines": {
+    "node": "^0.10.0"
+  },
+  "main": "./lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reelyactive/reelib.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "bugs": {
+    "url": "https://github.com/reelyactive/reelib/issues"
+  },
+  "contributors": [
+    { "name": "Jeffrey Dungen" }
+  ],
+  "license": "MIT"
+}
