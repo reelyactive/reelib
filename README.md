@@ -1,7 +1,9 @@
 reelib
 ======
 
-Library for common reelyActive methods.
+Library for common reelyActive methods.  Currently includes:
+- time
+- identifier
 
 
 Installation
@@ -29,7 +31,12 @@ The following are accessible under _reelib.time_:
 
 ### toTimestamp(timestamp)
 
-Convert the given timestamp into the standard numerical format (number of milliseconds since January 1st, 1970, expressed as a number).
+Convert the given timestamp into the standard numerical format (number of milliseconds since January 1st, 1970, expressed as a number).  For example:
+
+    reelib.time.toTimestamp('2015-01-01T01:23:45.678Z');
+    reelib.time.toTimestamp(1420075425678);
+
+would both yield 1420075425678.
 
 ### getCurrent()
 
@@ -37,7 +44,11 @@ Get the current timestamp in standard numerical format.
 
 ### getCurrentISO()
 
-Get the current timestamp as an ISO8601 String.
+Get the current timestamp as an ISO8601 String.  For example:
+
+    reelib.time.getCurrentISO();
+
+would yield something like '2015-01-01T01:23:45.678Z'.
 
 ### getFuture(milliseconds)
 
@@ -83,7 +94,7 @@ Create an identifier object with the given type and value.
 
 Create a new identifier object of the given type from the given identifier object.  For example:
 
-    var newIdentifier = convertType(oldIdentifier, TYPE_EUI64);
+    var newIdentifier = reelib.identifier.convertType(oldIdentifier, TYPE_EUI64);
 
 
 
