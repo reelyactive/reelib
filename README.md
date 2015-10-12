@@ -2,9 +2,9 @@ reelib
 ======
 
 Library for common reelyActive methods.  Currently includes:
-- time
-- identifier
-- tiraid
+- [time](#time-library)
+- [identifier](#identifier-library)
+- [tiraid](#tiraid-library)
 
 
 Installation
