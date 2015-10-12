@@ -15,6 +15,10 @@ var INPUT_DATA_RADIO_PAYLOAD = { value: '',
                                  length: 10 };
 var INPUT_DATA_RA28_IDENTIFIER = { type: identifier.RA28,
                                    value: INPUT_DATA_RA28 };
+var INPUT_DATA_VALID = { type: identifier.ADVA48,
+                         value: INPUT_DATA_ADVA48 };
+var INPUT_DATA_NULL = null;
+var INPUT_DATA_EMPTY = {};
 
 // Expected outputs for the scenario
 var EXPECTED_DATA_EUI64 = { type: identifier.EUI64,
@@ -28,6 +32,9 @@ var EXPECTED_DATA_RADIO_PAYLOAD = { type: identifier.RADIO_PAYLOAD,
                                     length: INPUT_DATA_RADIO_PAYLOAD.length };
 var EXPECTED_DATA_UNDEFINED = { type: identifier.UNDEFINED,
                                 value: null };
+var EXPECTED_DATA_VALID = true;
+var EXPECTED_DATA_NULL = false;
+var EXPECTED_DATA_EMPTY = false;
 
 
 // Describe the scenario
@@ -72,6 +79,24 @@ describe('identifier', function() {
     assert.deepEqual(identifier.convertType(INPUT_DATA_RA28_IDENTIFIER,
                                             identifier.EUI64),
                      EXPECTED_DATA_EUI64);
+  });
+
+  // Test the isValid function with a valid identifier
+  it('should assert that a valid identifier is valid', function() {
+    assert.strictEqual(identifier.isValid(INPUT_DATA_VALID),
+                       EXPECTED_DATA_VALID);
+  });
+
+  // Test the isValid function with a null identifier
+  it('should assert that a null identifier is invalid', function() {
+    assert.strictEqual(identifier.isValid(INPUT_DATA_NULL),
+                       EXPECTED_DATA_NULL);
+  });
+
+  // Test the isValid function with an empty identifier
+  it('should assert that an empty identifier is invalid', function() {
+    assert.strictEqual(identifier.isValid(INPUT_DATA_EMPTY),
+                       EXPECTED_DATA_EMPTY);
   });
 
 });

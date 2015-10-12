@@ -4,6 +4,7 @@ reelib
 Library for common reelyActive methods.  Currently includes:
 - time
 - identifier
+- tiraid
 
 
 Installation
@@ -70,6 +71,10 @@ Return whether the given timestamp is in the past.  Accepts timestamps in both t
 
 Return whether the first given timestamp is earlier than the second.  Accepts timestamps in both the standard numerical format and the String format.
 
+### isValid(timestamp)
+
+Returns whether the given timestamp is valid or not.
+
 
 Identifier library
 ------------------
@@ -96,6 +101,21 @@ Create a new identifier object of the given type from the given identifier objec
 
     var newIdentifier = reelib.identifier.convertType(oldIdentifier, TYPE_EUI64);
 
+### isValid(identifier)
+
+Returns whether the given identifier is valid or not.
+
+
+Tiraid library
+--------------
+
+Tiraids have a [timestamp](#time-library), radioDecodings and an [identifier](#identifier-library).
+
+The following are accessible under _reelib.tiraid_:
+
+### isValid(tiraid)
+
+Returns whether the given tiraid is valid or not.
 
 
 What's next?

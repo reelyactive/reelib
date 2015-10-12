@@ -15,6 +15,9 @@ var INPUT_DATA_NUMERICAL_TIMESTAMP_DELTA = INPUT_DATA_NUMERICAL_TIMESTAMP +
                                            INPUT_DATA_DELTA_MS;
 var INPUT_DATA_NUMERICAL_TIMESTAMP_SINGULARITY = 2366841600000;
 var INPUT_DATA_STRING_TIMESTAMP_SINGULARITY = '2045-01-01T00:00:00.000Z';
+var INPUT_DATA_VALID = INPUT_DATA_NUMERICAL_TIMESTAMP;
+var INPUT_DATA_NULL = null;
+var INPUT_DATA_OBJECT = {};
 
 // Expected outputs for the scenario
 var EXPECTED_DATA_NUMERICAL_TIMESTAMP = INPUT_DATA_NUMERICAL_TIMESTAMP;
@@ -22,6 +25,9 @@ var EXPECTED_DATA_STRING_TIMESTAMP = 1420075425678;
 var EXPECTED_DATA_TYPE_NUMERICAL = 'number';
 var EXPECTED_DATA_TYPE_STRING = 'string';
 var EXPECTED_DATA_DELTA_MS = INPUT_DATA_DELTA_MS;
+var EXPECTED_DATA_VALID = true;
+var EXPECTED_DATA_NULL = false;
+var EXPECTED_DATA_OBJECT = false;
 
 
 // Describe the scenario
@@ -121,6 +127,21 @@ describe('time', function() {
   it('should recognise an earlier timestamp (string vs. number)', function() {
     assert.ok(time.isEarlier(INPUT_DATA_STRING_TIMESTAMP,
                              INPUT_DATA_NUMERICAL_TIMESTAMP_SINGULARITY));
+  });
+
+  // Test the isValid function with a valid timestamp
+  it('should assert that a valid timestamp is valid', function() {
+    assert.strictEqual(time.isValid(INPUT_DATA_VALID), EXPECTED_DATA_VALID);
+  });
+
+  // Test the isValid function with a null timestamp
+  it('should assert that a null timestamp is invalid', function() {
+    assert.strictEqual(time.isValid(INPUT_DATA_NULL), EXPECTED_DATA_NULL);
+  });
+
+  // Test the isValid function with an object as timestamp
+  it('should assert that a timestamp object is invalid', function() {
+    assert.strictEqual(time.isValid(INPUT_DATA_OBJECT), EXPECTED_DATA_OBJECT);
   });
 
 });
