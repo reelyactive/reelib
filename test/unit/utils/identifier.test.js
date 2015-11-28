@@ -11,6 +11,11 @@ var assert = require ('assert');
 var INPUT_DATA_EUI64 = '001bc50940100000';
 var INPUT_DATA_RA28 = '0100000';
 var INPUT_DATA_ADVA48 = 'fee150bada55';
+var INPUT_DATA_COLON_CAPS = 'FE:E1:50:BA:DA:55';
+var INPUT_DATA_HYPHEN_UUID = '7265656c-7941-6374-6976-652055554944';
+var INPUT_DATA_WRONG_LENGTH = '1234567980';
+var INPUT_DATA_ADVA48_IDENTIFIER = { type: identifier.ADVA48,
+                                     value: INPUT_DATA_COLON_CAPS };
 var INPUT_DATA_RADIO_PAYLOAD = { value: '',
                                  length: 10 };
 var INPUT_DATA_RA28_IDENTIFIER = { type: identifier.RA28,
@@ -27,6 +32,10 @@ var EXPECTED_DATA_RA28 = { type: identifier.RA28,
                            value: INPUT_DATA_RA28 };
 var EXPECTED_DATA_ADVA48 = { type: identifier.ADVA48,
                              value: INPUT_DATA_ADVA48 };
+var EXPECTED_DATA_COLON_CAPS = 'fee150bada55';
+var EXPECTED_DATA_HYPHEN_UUID = '7265656c794163746976652055554944';
+var EXPECTED_DATA_WRONG_LENGTH = null;
+var EXPECTED_DATA_ADVA48_IDENTIFIER = EXPECTED_DATA_COLON_CAPS;
 var EXPECTED_DATA_RADIO_PAYLOAD = { type: identifier.RADIO_PAYLOAD,
                                     value: INPUT_DATA_RADIO_PAYLOAD.value,
                                     length: INPUT_DATA_RADIO_PAYLOAD.length };
@@ -72,6 +81,31 @@ describe('identifier', function() {
   it('should create an undefined identifier', function() {
     assert.deepEqual(identifier.toIdentifier(null, null),
                      EXPECTED_DATA_UNDEFINED);
+  });
+
+  // Test the toIdentifierString function with colon-separated caps
+  it('should create a valid ADVA48 identifier string', function() {
+    assert.strictEqual(identifier.toIdentifierString(INPUT_DATA_COLON_CAPS),
+                       EXPECTED_DATA_COLON_CAPS);
+  });
+
+  // Test the toIdentifierString function with hyphenated UUID
+  it('should create a valid UUID identifier string', function() {
+    assert.strictEqual(identifier.toIdentifierString(INPUT_DATA_HYPHEN_UUID),
+                       EXPECTED_DATA_HYPHEN_UUID);
+  });
+
+  // Test the toIdentifierString function with invalid length input
+  it('should assert that an wrong-length identifier is invalid', function() {
+    assert.strictEqual(identifier.toIdentifierString(INPUT_DATA_WRONG_LENGTH),
+                       EXPECTED_DATA_WRONG_LENGTH);
+  });
+
+  // Test the toIdentifierString function with identifier object
+  it('should create a valid ADVA48 identifier string', function() {
+    assert.strictEqual(identifier.toIdentifierString(
+                       INPUT_DATA_ADVA48_IDENTIFIER),
+                       EXPECTED_DATA_ADVA48_IDENTIFIER);
   });
 
   // Test the convertType function with RA-28 to EUI-64
