@@ -102,10 +102,10 @@ Create an identifier object with the given type and value.  For example:
 
 ### toIdentifierString(identifier)
 
-Convert the given identifier (as string or object) to a valid identifier string, if possible, otherwise return null.  A valid identifier string is:
+Convert the given identifier (as string or object) to a _valid_ identifier string, if possible, otherwise return null.  A valid identifier string is:
 - hexadecimal characters only (no separators)
 - all lowercase
-- 48, 64 or 128 bits in length
+- 16, 48, 64 or 128 bits in length
 
 For example:
 
@@ -121,7 +121,7 @@ Create a new identifier object of the given type from the given identifier objec
 
 ### isValid(identifier)
 
-Returns whether the given identifier object is valid or not.
+Returns whether the given identifier (as string or object) is valid or not.
 
 
 Tiraid library
