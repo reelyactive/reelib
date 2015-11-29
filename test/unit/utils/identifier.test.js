@@ -20,8 +20,9 @@ var INPUT_DATA_RADIO_PAYLOAD = { value: '',
                                  length: 10 };
 var INPUT_DATA_RA28_IDENTIFIER = { type: identifier.RA28,
                                    value: INPUT_DATA_RA28 };
-var INPUT_DATA_VALID = { type: identifier.ADVA48,
-                         value: INPUT_DATA_ADVA48 };
+var INPUT_DATA_VALID_OBJECT = { type: identifier.ADVA48,
+                                value: INPUT_DATA_ADVA48 };
+var INPUT_DATA_VALID_STRING = 'fee150bada55';
 var INPUT_DATA_NULL = null;
 var INPUT_DATA_EMPTY = {};
 
@@ -41,7 +42,8 @@ var EXPECTED_DATA_RADIO_PAYLOAD = { type: identifier.RADIO_PAYLOAD,
                                     length: INPUT_DATA_RADIO_PAYLOAD.length };
 var EXPECTED_DATA_UNDEFINED = { type: identifier.UNDEFINED,
                                 value: null };
-var EXPECTED_DATA_VALID = true;
+var EXPECTED_DATA_VALID_OBJECT = true;
+var EXPECTED_DATA_VALID_STRING = true;
 var EXPECTED_DATA_NULL = false;
 var EXPECTED_DATA_EMPTY = false;
 
@@ -116,9 +118,15 @@ describe('identifier', function() {
   });
 
   // Test the isValid function with a valid identifier
-  it('should assert that a valid identifier is valid', function() {
-    assert.strictEqual(identifier.isValid(INPUT_DATA_VALID),
-                       EXPECTED_DATA_VALID);
+  it('should assert that a valid identifier object is valid', function() {
+    assert.strictEqual(identifier.isValid(INPUT_DATA_VALID_OBJECT),
+                       EXPECTED_DATA_VALID_OBJECT);
+  });
+
+  // Test the isValid function with a valid string
+  it('should assert that a valid identifier string is valid', function() {
+    assert.strictEqual(identifier.isValid(INPUT_DATA_VALID_STRING),
+                       EXPECTED_DATA_VALID_STRING);
   });
 
   // Test the isValid function with a null identifier
