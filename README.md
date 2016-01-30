@@ -5,6 +5,7 @@ Library for common reelyActive methods.  Currently includes:
 - [time](#time-library)
 - [identifier](#identifier-library)
 - [tiraid](#tiraid-library)
+- [event](#event-library)
 
 
 Installation
@@ -136,6 +137,43 @@ The following are accessible under _reelib.tiraid_:
 Returns whether the given tiraid is valid or not.
 
 
+Event library
+-------------
+
+Events have a type and [tiraid](#tiraid-library).
+
+The following are accessible under _reelib.event_:
+
+### Constants
+
+- APPEARANCE: 'appearance'
+- DISPLACEMENT: 'displacement'
+- KEEPALIVE: 'keep-alive'
+- DISAPPEARANCE: 'disappearance'
+- EVENTS_ROUTE_NAME: 'events'
+
+### isValid(event)
+
+Returns whether the given event is valid or not.
+
+### postUpdate(options, event, callback)
+
+POSTs the given event to a remote server.  The following options are supported (those shown are the defaults):
+
+   {
+     hostname: "www.hyperlocalcontext.com",
+     port: 80,
+     timeout: 30000,
+     logToConsole: false
+   }
+
+The callback returns the error (if any), the original event, and the response message (if any).  For example:
+
+    reelib.event.postUpdate(options, event, function(err, event, message) {
+      /* Handle the callback */
+    });
+
+
 What's next?
 ------------
 
@@ -147,7 +185,7 @@ License
 
 MIT License
 
-Copyright (c) 2015 reelyActive
+Copyright (c) 2015-2016 reelyActive
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
