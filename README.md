@@ -173,16 +173,20 @@ POSTs the given event to a remote server.  The following options are supported (
     {
       hostname: "www.hyperlocalcontext.com",
       port: 80,
-      timeout: 30000,
+      timeout: 10000,
       logToConsole: false
     }
 
 The callback returns the error (if any), the original event, and the response message (if any).  For example:
 
-    reelib.event.postUpdate(options, event, function(err, event, message) {
-      /* Handle the callback */
-    });
+```javascript
+var options = { /* See above */ };
+var event = { event: 'appearance', tiraid: tiraid };
 
+reelib.event.postUpdate(options, event, function(err, event, message) {
+  /* Handle the callback */
+});
+```
 
 What's next?
 ------------
