@@ -28,6 +28,7 @@ var EXPECTED_DATA_DELTA_MS = INPUT_DATA_DELTA_MS;
 var EXPECTED_DATA_VALID = true;
 var EXPECTED_DATA_NULL = false;
 var EXPECTED_DATA_OBJECT = false;
+var EXPECTED_DATA_LOCAL_TIME_OF_DAY = '20:23:45.678';
 
 
 // Describe the scenario
@@ -142,6 +143,12 @@ describe('time', function() {
   // Test the isValid function with an object as timestamp
   it('should assert that a timestamp object is invalid', function() {
     assert.strictEqual(time.isValid(INPUT_DATA_OBJECT), EXPECTED_DATA_OBJECT);
+  });
+
+  // Test the toLocalTimeOfDay function with a valid timestamp
+  it('should return the local time of day (expecting EST!)', function() {
+    assert.strictEqual(time.toLocalTimeOfDay(INPUT_DATA_STRING_TIMESTAMP),
+                       EXPECTED_DATA_LOCAL_TIME_OF_DAY);
   });
 
 });

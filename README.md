@@ -76,6 +76,10 @@ Return whether the first given timestamp is earlier than the second.  Accepts ti
 
 Returns whether the given timestamp is valid or not.
 
+### toLocalTimeOfDay(timestamp)
+
+Returns the timestamp as a human-readable String representing the time of day on the local machine, ex: 12:34:56.789
+
 
 Identifier library
 ------------------
