@@ -150,7 +150,7 @@ Returns the tiraid as a human-readable String expected to fit on a single line (
 Event library
 -------------
 
-Events have a type and [tiraid](#tiraid-library).
+Events have an event (appearance, displacement, keep-alive or disappearance) and [tiraid](#tiraid-library).
 
 The following are accessible under _reelib.event_:
 
