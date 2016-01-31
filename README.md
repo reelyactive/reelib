@@ -140,6 +140,12 @@ The following are accessible under _reelib.tiraid_:
 
 Returns whether the given tiraid is valid or not.
 
+### toShortString(tiraid)
+
+Returns the tiraid as a human-readable String expected to fit on a single line (less than 80 characters).  For example:
+
+    tID: 001bc50940100000 rID: 001bc50940800000 rssi: 128 +1r at 01:23:45.678
+
 
 Event library
 -------------
@@ -164,12 +170,12 @@ Returns whether the given event is valid or not.
 
 POSTs the given event to a remote server.  The following options are supported (those shown are the defaults):
 
-   {
-     hostname: "www.hyperlocalcontext.com",
-     port: 80,
-     timeout: 30000,
-     logToConsole: false
-   }
+    {
+      hostname: "www.hyperlocalcontext.com",
+      port: 80,
+      timeout: 30000,
+      logToConsole: false
+    }
 
 The callback returns the error (if any), the original event, and the response message (if any).  For example:
 

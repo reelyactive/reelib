@@ -32,6 +32,7 @@ var INPUT_DATA_EMPTY = {};
 var EXPECTED_DATA_VALID = true;
 var EXPECTED_DATA_NULL = false;
 var EXPECTED_DATA_EMPTY = false;
+var EXPECTED_DATA_SHORT_STRING = 'tID: 001bc50940100000 rID: 001bc50940800000 rssi: 128 at 20:23:45.678';
 
 
 // Describe the scenario
@@ -50,6 +51,12 @@ describe('tiraid', function() {
   // Test the isValid function with an empty tiraid
   it('should assert that an empty tiraid is invalid', function() {
     assert.strictEqual(tiraid.isValid(INPUT_DATA_EMPTY), EXPECTED_DATA_EMPTY);
+  });
+
+  // Test the toShortString function with a valid tiraid
+  it('should convert the tiraid to a short string (EST!)', function() {
+    assert.strictEqual(tiraid.toShortString(INPUT_DATA_VALID),
+                       EXPECTED_DATA_SHORT_STRING);
   });
 
 });
