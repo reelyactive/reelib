@@ -140,6 +140,10 @@ The following are accessible under _reelib.tiraid_:
 
 Returns whether the given tiraid is valid or not.
 
+### isReelyActiveTransmission(tiraid)
+
+Returns whether the given tiraid represents a wireless transmission by a reelyActive device or not.
+
 ### toShortString(tiraid)
 
 Returns the tiraid as a human-readable String expected to fit on a single line (less than 80 characters).  For example:
