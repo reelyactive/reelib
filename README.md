@@ -181,6 +181,10 @@ POSTs the given event to a remote server.  The following options are supported (
       logToConsole: false
     }
 
+To use a proxy server, add the following to the options:
+
+    proxy: 'http://my.proxy.name'
+
 The callback returns the error (if any), the original event, and the response message (if any).  For example:
 
 ```javascript
