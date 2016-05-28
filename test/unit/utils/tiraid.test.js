@@ -63,6 +63,7 @@ var EXPECTED_DATA_NULL = false;
 var EXPECTED_DATA_EMPTY = false;
 var EXPECTED_DATA_REELYACTIVE = true;
 var EXPECTED_DATA_SHORT_STRING = 'tID: 001bc50940100000 rID: 001bc50940800000 rssi: 128 at 20:23:45.678';
+var EXPECTED_DATA_CSV_STRING = '20:23:45.678,001bc50940100000,001bc50940800000,128';
 
 
 // Describe the scenario
@@ -93,6 +94,12 @@ describe('tiraid', function() {
   it('should convert the tiraid to a short string (EST!)', function() {
     assert.strictEqual(tiraid.toShortString(INPUT_DATA_VALID),
                        EXPECTED_DATA_SHORT_STRING);
+  });
+
+  // Test the toCSVString function with a valid tiraid
+  it('should convert the tiraid to a CSV string (EST!)', function() {
+    assert.strictEqual(tiraid.toCSVString(INPUT_DATA_VALID),
+                       EXPECTED_DATA_CSV_STRING);
   });
 
 });

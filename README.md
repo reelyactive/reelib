@@ -140,6 +140,10 @@ Tiraids have a [timestamp](#time-library), radioDecodings and an [identifier](#i
 
 The following are accessible under _reelib.tiraid_:
 
+### Constants
+
+- CSV_HEADER: 'Timestamp,TransmitterID,ReceiverID,RSSI'
+
 ### isValid(tiraid)
 
 Returns whether the given tiraid is valid or not.
@@ -153,6 +157,12 @@ Returns whether the given tiraid represents a wireless transmission by a reelyAc
 Returns the tiraid as a human-readable String expected to fit on a single line (less than 80 characters).  For example:
 
     tID: 001bc50940100000 rID: 001bc50940800000 rssi: 128 +1r at 01:23:45.678
+
+### toCSVString(tiraid)
+
+Returns the tiraid as a Comma-Separated Values (CSV) String.  For example:
+
+    01:23:45.678,001bc50940100000,001bc50940800000,128
 
 
 Event library
