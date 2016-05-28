@@ -36,6 +36,7 @@ var INPUT_DATA_EMPTY = {};
 var EXPECTED_DATA_VALID = true;
 var EXPECTED_DATA_NULL = false;
 var EXPECTED_DATA_EMPTY = false;
+var EXPECTED_DATA_CSV_STRING = '20:23:45.678,001bc50940100000,001bc50940800000,128,appearance';
 
 
 // Describe the scenario
@@ -54,6 +55,12 @@ describe('event', function() {
   // Test the isValid function with an empty event
   it('should assert that an empty event is invalid', function() {
     assert.strictEqual(event.isValid(INPUT_DATA_EMPTY), EXPECTED_DATA_EMPTY);
+  });
+
+  // Test the toCSVString function with a valid event
+  it('should convert the tiraid to a CSV string (EST!)', function() {
+    assert.strictEqual(event.toCSVString(INPUT_DATA_VALID),
+                       EXPECTED_DATA_CSV_STRING);
   });
 
 });

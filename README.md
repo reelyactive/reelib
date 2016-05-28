@@ -179,6 +179,7 @@ The following are accessible under _reelib.event_:
 - KEEPALIVE: 'keep-alive'
 - DISAPPEARANCE: 'disappearance'
 - EVENTS_ROUTE_NAME: 'events'
+- CSV_HEADER: 'Timestamp,TransmitterID,ReceiverID,RSSI,Events'
 
 ### isValid(event)
 
@@ -209,6 +210,13 @@ reelib.event.postUpdate(options, event, function(err, event, message) {
   /* Handle the callback */
 });
 ```
+
+### toCSVString(event)
+
+Returns the event as a Comma-Separated Values (CSV) String.  For example:
+
+    01:23:45.678,001bc50940100000,001bc50940800000,128,appearance
+
 
 What's next?
 ------------
