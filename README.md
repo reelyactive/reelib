@@ -80,6 +80,10 @@ Returns whether the given timestamp is valid or not.
 
 Returns the timestamp as a human-readable String representing the time of day on the local machine, ex: 12:34:56.789
 
+### toLocalTwelveDigitString(timestamp)
+
+Returns the timestamp as a twelve-digit String representing the time of day on the local machine, in the format YYMMDDHHMMSS, ex: 160101123456
+
 
 Identifier library
 ------------------

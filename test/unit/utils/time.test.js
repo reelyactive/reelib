@@ -29,6 +29,7 @@ var EXPECTED_DATA_VALID = true;
 var EXPECTED_DATA_NULL = false;
 var EXPECTED_DATA_OBJECT = false;
 var EXPECTED_DATA_LOCAL_TIME_OF_DAY = '20:23:45.678';
+var EXPECTED_DATA_TWELVE_DIGIT_STRING = '141231202345';
 
 
 // Describe the scenario
@@ -149,6 +150,12 @@ describe('time', function() {
   it('should return the local time of day (expecting EST!)', function() {
     assert.strictEqual(time.toLocalTimeOfDay(INPUT_DATA_STRING_TIMESTAMP),
                        EXPECTED_DATA_LOCAL_TIME_OF_DAY);
+  });
+
+  // Test the toLocalTwelveDigitString function with a valid timestamp
+  it('should return the twelve digit string (expecting EST!)', function() {
+    assert.strictEqual(time.toLocalTwelveDigitString(
+             INPUT_DATA_STRING_TIMESTAMP), EXPECTED_DATA_TWELVE_DIGIT_STRING);
   });
 
 });
