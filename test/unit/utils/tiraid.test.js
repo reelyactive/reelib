@@ -58,6 +58,10 @@ var INPUT_DATA_REELYACTIVE = {
 
 
 // Expected outputs for the scenario
+var EXPECTED_DATA_TIMESTAMP = 1388539425678;
+var EXPECTED_DATA_DEVICEID = '001bc50940100000';
+var EXPECTED_DATA_RECEIVERID = '001bc50940800000';
+var EXPECTED_DATA_RSSI = 128;
 var EXPECTED_DATA_VALID = true;
 var EXPECTED_DATA_NULL = false;
 var EXPECTED_DATA_EMPTY = false;
@@ -68,6 +72,30 @@ var EXPECTED_DATA_CSV_STRING = '20:23:45.678,001bc50940100000,001bc50940800000,1
 
 // Describe the scenario
 describe('tiraid', function() {
+
+  // Test the getTimestamp function with a valid tiraid
+  it('should return the timestamp of the tiraid', function() {
+    assert.strictEqual(tiraid.getTimestamp(INPUT_DATA_VALID),
+                       EXPECTED_DATA_TIMESTAMP);
+  });
+
+  // Test the getDeviceId function with a valid tiraid
+  it('should return the deviceId of the tiraid', function() {
+    assert.strictEqual(tiraid.getDeviceId(INPUT_DATA_VALID),
+                       EXPECTED_DATA_DEVICEID);
+  });
+
+  // Test the getReceiverId function with a valid tiraid
+  it('should return the strongest receiverId of the tiraid', function() {
+    assert.strictEqual(tiraid.getReceiverId(INPUT_DATA_VALID),
+                       EXPECTED_DATA_RECEIVERID);
+  });
+
+  // Test the getRSSI function with a valid tiraid
+  it('should return the strongest rssi of the tiraid', function() {
+    assert.strictEqual(tiraid.getRSSI(INPUT_DATA_VALID),
+                       EXPECTED_DATA_RSSI);
+  });
 
   // Test the isValid function with a valid tiraid
   it('should assert that a valid tiraid is valid', function() {

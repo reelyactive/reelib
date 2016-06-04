@@ -144,6 +144,22 @@ The following are accessible under _reelib.tiraid_:
 
 - CSV_HEADER: 'Timestamp,TransmitterID,ReceiverID,RSSI'
 
+### getTimestamp(tiraid)
+
+Returns the timestamp of the given tiraid as per the [toTimestamp(timestamp)](#totimestamptimestamp) function.
+
+### getDeviceId(tiraid)
+
+Returns the device identifier of the given tiraid as per the [toIdentifierString(identifier)](#toidentifierstringidentifier) function.
+
+### getReceiverId(tiraid)
+
+Returns the strongest receiver identifier of the given tiraid as per the [toIdentifierString(identifier)](#toidentifierstringidentifier) function.
+
+### getRSSI(tiraid)
+
+Returns the RSSI of the stongest receiver of the given tiraid.
+
 ### isValid(tiraid)
 
 Returns whether the given tiraid is valid or not.
