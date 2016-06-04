@@ -172,7 +172,7 @@ Returns whether the given tiraid represents a wireless transmission by a reelyAc
 
 Returns the tiraid as a human-readable String expected to fit on a single line (less than 80 characters).  For example:
 
-    tID: 001bc50940100000 rID: 001bc50940800000 rssi: 128 +1r at 01:23:45.678
+    dID: 001bc50940100000 rID: 001bc50940800000 rssi: 128 +1r at 01:23:45.678
 
 ### toCSVString(tiraid)
 
