@@ -66,6 +66,10 @@ var EXPECTED_DATA_VALID = true;
 var EXPECTED_DATA_NULL = false;
 var EXPECTED_DATA_EMPTY = false;
 var EXPECTED_DATA_REELYACTIVE = true;
+var EXPECTED_DATA_FLATTENED = { time: 1388539425678,
+                                deviceId: '001bc50940100000',
+                                receiverId: '001bc50940800000',
+                                rssi: 128 };
 var EXPECTED_DATA_SHORT_STRING = 'dID: 001bc50940100000 rID: 001bc50940800000 rssi: 128 at 20:23:45.678';
 var EXPECTED_DATA_CSV_STRING = '20:23:45.678,001bc50940100000,001bc50940800000,128';
 
@@ -116,6 +120,12 @@ describe('tiraid', function() {
   it('should assert that a reelyActive tiraid is reelyActive', function() {
     assert.strictEqual(tiraid.isReelyActiveTransmission(
                           INPUT_DATA_REELYACTIVE), EXPECTED_DATA_REELYACTIVE);
+  });
+
+  // Test the toFlattened function with a valid tiraid
+  it('should convert the tiraid to a flattened object', function() {
+    assert.deepEqual(tiraid.toFlattened(INPUT_DATA_VALID),
+                     EXPECTED_DATA_FLATTENED);
   });
 
   // Test the toShortString function with a valid tiraid

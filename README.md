@@ -168,6 +168,17 @@ Returns whether the given tiraid is valid or not.
 
 Returns whether the given tiraid represents a wireless transmission by a reelyActive device or not.
 
+### toFlattened(tiraid)
+
+Returns the tiraid as a flattened object.  For example:
+
+    {
+      time: 1420075425678,
+      deviceId: 001bc50940100000,
+      receiverId: 001bc50940800000,
+      rssi: 128
+    }
+
 ### toShortString(tiraid)
 
 Returns the tiraid as a human-readable String expected to fit on a single line (less than 80 characters).  For example:
