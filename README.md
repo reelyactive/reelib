@@ -174,8 +174,8 @@ Returns the tiraid as a flattened object.  For example:
 
     {
       time: 1420075425678,
-      deviceId: 001bc50940100000,
-      receiverId: 001bc50940800000,
+      deviceId: "001bc50940100000",
+      receiverId: "001bc50940800000",
       rssi: 128
     }
 
@@ -208,6 +208,10 @@ The following are accessible under _reelib.event_:
 - EVENTS_ROUTE_NAME: 'events'
 - CSV_HEADER: 'Timestamp,TransmitterID,ReceiverID,RSSI,Events'
 
+### getEvent(tiraid)
+
+Returns the type of event.
+
 ### isValid(event)
 
 Returns whether the given event is valid or not.
@@ -237,6 +241,18 @@ reelib.event.postUpdate(options, event, function(err, event, message) {
   /* Handle the callback */
 });
 ```
+
+### toFlattened(event)
+
+Returns the event as a flattened object.  For example:
+
+    {
+      event: "appearance",
+      time: 1420075425678,
+      deviceId: "001bc50940100000",
+      receiverId: "001bc50940800000",
+      rssi: 128
+    }
 
 ### toCSVString(event)
 
