@@ -6,6 +6,7 @@ Library for common reelyActive methods.  Currently includes:
 - [identifier](#identifier-library)
 - [tiraid](#tiraid-library)
 - [event](#event-library)
+- [reel](#reel-library)
 
 
 Installation
@@ -259,6 +260,40 @@ Returns the event as a flattened object.  For example:
 Returns the event as a Comma-Separated Values (CSV) String.  For example:
 
     01:23:45.678,001bc50940100000,001bc50940800000,128,appearance
+
+
+Reel library
+------------
+
+Methods specific to the reelyActive sensor reel architecture are contained in this library.
+
+The following are accessible under _reelib.reel_:
+
+### putStatusUpdate(options, event, callback)
+
+PUTs the given reel status event to a remote server.  The following options are supported (those shown are the defaults):
+
+    {
+      hostname: "www.hyperlocalcontext.com",
+      port: 80,
+      timeout: 10000,
+      logToConsole: false
+    }
+
+To use a proxy server, add the following to the options:
+
+    proxy: 'http://my.proxy.name'
+
+The callback returns the error (if any), the original event, and the response message (if any).  For example:
+
+```javascript
+var options = { /* See above */ };
+var event = { type: 'reelceiverStatistics', ... };
+
+reelib.reel.putStatusUpdate(options, event, function(err, event, message) {
+  /* Handle the callback */
+});
+```
 
 
 What's next?
