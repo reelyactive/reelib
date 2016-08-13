@@ -157,6 +157,10 @@ Returns the device identifier of the given tiraid as per the [toIdentifierString
 
 Returns the strongest receiver identifier of the given tiraid as per the [toIdentifierString(identifier)](#toidentifierstringidentifier) function.
 
+### getAssociationIds(tiraid)
+
+Returns an array of all association identifiers embedded in the identifier payload of the given tiraid as per the [toIdentifierString(identifier)](#toidentifierstringidentifier) function.
+
 ### getRSSI(tiraid)
 
 Returns the RSSI of the stongest receiver of the given tiraid.

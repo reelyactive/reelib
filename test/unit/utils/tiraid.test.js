@@ -24,6 +24,24 @@ var INPUT_DATA_VALID = {
     }
   ]
 };
+var INPUT_DATA_ASSOCIATIONIDS = {
+  "identifier": {
+    "advData": {
+      "complete128BitUUIDs": "7265656c794163746976652055554944",
+      "nonComplete128BitUUIDs": "adabfb006e7d4601bda2bffaa68956ba",
+      "complete16BitUUIDs": "feed",
+      "nonComplete16BitUUIDs": "fee7fee0",
+      "manufacturerSpecificData": {
+        "companyIdentifierCode": "004c",
+        "iBeacon": {
+          "uuid": "8deefbb9f7384297804096668bb44281",
+          "major": "0001",
+          "minor": "2258",
+        }
+      }
+    }
+  }
+};
 var INPUT_DATA_NULL = null;
 var INPUT_DATA_EMPTY = {};
 var INPUT_DATA_REELYACTIVE = {
@@ -61,6 +79,11 @@ var INPUT_DATA_REELYACTIVE = {
 var EXPECTED_DATA_TIMESTAMP = 1388539425678;
 var EXPECTED_DATA_DEVICEID = '001bc50940100000';
 var EXPECTED_DATA_RECEIVERID = '001bc50940800000';
+var EXPECTED_DATA_ASSOCIATIONIDS = [ '7265656c794163746976652055554944',
+                                     'adabfb006e7d4601bda2bffaa68956ba',
+                                     'feed', 'fee7', 'fee0', '004c',
+                                     '8deefbb9f7384297804096668bb4428100012258'
+];
 var EXPECTED_DATA_RSSI = 128;
 var EXPECTED_DATA_VALID = true;
 var EXPECTED_DATA_NULL = false;
@@ -93,6 +116,12 @@ describe('tiraid', function() {
   it('should return the strongest receiverId of the tiraid', function() {
     assert.strictEqual(tiraid.getReceiverId(INPUT_DATA_VALID),
                        EXPECTED_DATA_RECEIVERID);
+  });
+
+  // Test the getAssociationIds function with an associaitons tiraid
+  it('should return the association ids of the tiraid', function() {
+    assert.deepEqual(tiraid.getAssociationIds(INPUT_DATA_ASSOCIATIONIDS),
+                     EXPECTED_DATA_ASSOCIATIONIDS);
   });
 
   // Test the getRSSI function with a valid tiraid
