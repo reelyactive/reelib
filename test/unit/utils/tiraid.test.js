@@ -79,11 +79,10 @@ var INPUT_DATA_REELYACTIVE = {
 var EXPECTED_DATA_TIMESTAMP = 1388539425678;
 var EXPECTED_DATA_DEVICEID = '001bc50940100000';
 var EXPECTED_DATA_RECEIVERID = '001bc50940800000';
-var EXPECTED_DATA_ASSOCIATIONIDS = [ '7265656c794163746976652055554944',
-                                     'adabfb006e7d4601bda2bffaa68956ba',
-                                     'feed', 'fee7', 'fee0', '004c',
-                                     '8deefbb9f7384297804096668bb4428100012258'
-];
+var EXPECTED_DATA_ASSOCIATIONIDS = [
+    '8deefbb9f7384297804096668bb4428100012258',
+    '7265656c794163746976652055554944', 'adabfb006e7d4601bda2bffaa68956ba',
+    'feed', 'fee7', 'fee0', '004c' ];
 var EXPECTED_DATA_RSSI = 128;
 var EXPECTED_DATA_VALID = true;
 var EXPECTED_DATA_NULL = false;
