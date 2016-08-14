@@ -26,6 +26,8 @@ var INPUT_DATA_VALID = {
 };
 var INPUT_DATA_ASSOCIATIONIDS = {
   "identifier": {
+    "value": "001bc50940000000",
+    "type": "EUI-64",
     "advData": {
       "complete128BitUUIDs": "7265656c794163746976652055554944",
       "nonComplete128BitUUIDs": "adabfb006e7d4601bda2bffaa68956ba",
@@ -82,7 +84,7 @@ var EXPECTED_DATA_RECEIVERID = '001bc50940800000';
 var EXPECTED_DATA_ASSOCIATIONIDS = [
     '8deefbb9f7384297804096668bb4428100012258',
     '7265656c794163746976652055554944', 'adabfb006e7d4601bda2bffaa68956ba',
-    'feed', 'fee7', 'fee0', '004c' ];
+    'feed', 'fee7', 'fee0', '004c', '001bc5094' ];
 var EXPECTED_DATA_RSSI = 128;
 var EXPECTED_DATA_VALID = true;
 var EXPECTED_DATA_NULL = false;
