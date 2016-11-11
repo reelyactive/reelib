@@ -40,6 +40,7 @@ var EXPECTED_DATA_EMPTY = false;
 var EXPECTED_DATA_FLATTENED = { event: "appearance",
                                 time: 1388539425678,
                                 deviceId: "001bc50940100000",
+                                deviceAssociationIds: [ '001bc5094' ],
                                 receiverId: "001bc50940800000",
                                 rssi: 128 };
 var EXPECTED_DATA_CSV_STRING = '20:23:45.678,001bc50940100000,001bc50940800000,128,appearance';

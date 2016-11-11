@@ -92,6 +92,7 @@ var EXPECTED_DATA_EMPTY = false;
 var EXPECTED_DATA_REELYACTIVE = true;
 var EXPECTED_DATA_FLATTENED = { time: 1388539425678,
                                 deviceId: '001bc50940100000',
+                                deviceAssociationIds: [ '001bc5094' ],
                                 receiverId: '001bc50940800000',
                                 rssi: 128 };
 var EXPECTED_DATA_SHORT_STRING = 'dID: 001bc50940100000 rID: 001bc50940800000 rssi: 128 at 20:23:45.678';
