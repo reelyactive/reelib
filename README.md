@@ -265,6 +265,24 @@ Returns the event as a Comma-Separated Values (CSV) String.  For example:
 
     01:23:45.678,001bc50940100000,001bc50940800000,128,appearance
 
+### eventqueue
+
+A simple event queue class which accepts tiraids and generates events, if applicable, in the callback.  The following options are supported (those shown are the defaults):
+
+    {
+      keepAliveMilliseconds: 5000,
+      disappearanceMilliseconds: 15000
+    }
+
+```javascript
+var options = { /* See above */ };
+var eventqueue = new reelib.event.eventqueue(options);
+
+eventqueue.insert(tiraid, function(event) {
+  if(event) { /* Do something with the event */ }
+});
+```
+
 
 Reel library
 ------------
