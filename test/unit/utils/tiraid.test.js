@@ -40,6 +40,11 @@ var INPUT_DATA_ASSOCIATIONIDS = {
           "major": "0001",
           "minor": "2258",
         }
+      },
+      "serviceData": {
+        "estimote": {
+          "id": "11223344556677"
+        }
       }
     }
   }
@@ -82,7 +87,7 @@ var EXPECTED_DATA_TIMESTAMP = 1388539425678;
 var EXPECTED_DATA_DEVICEID = '001bc50940100000';
 var EXPECTED_DATA_RECEIVERID = '001bc50940800000';
 var EXPECTED_DATA_ASSOCIATIONIDS = [
-    '8deefbb9f7384297804096668bb4428100012258',
+    '8deefbb9f7384297804096668bb4428100012258', '11223344556677',
     '7265656c794163746976652055554944', 'adabfb006e7d4601bda2bffaa68956ba',
     'feed', 'fee7', 'fee0', '004c', '001bc5094' ];
 var EXPECTED_DATA_RSSI = 128;
