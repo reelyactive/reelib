@@ -221,6 +221,18 @@ Returns the type of event.
 
 Returns whether the given event is valid or not.
 
+### isPass(event, accept, reject)
+
+Returns whether the given event meets the accept criteria while not meeting the reject criteria.  Each criteria is structured as follows:
+
+    {
+      deviceIds: [ /* IDs which meet the criteria */ ],
+      receiverIds: [ /* IDs which meet the criteria */ ],
+      rssiRange: { minimum: #, maximum: # }
+    }
+
+Not all of the above properties need to be included.  Note that no event can meet an empty criteria of {}!  To ignore either or both the accept/reject criteria, set these to _null_ instead.
+
 ### postUpdate(options, event, callback)
 
 POSTs the given event to a remote server.  The following options are supported (those shown are the defaults):
