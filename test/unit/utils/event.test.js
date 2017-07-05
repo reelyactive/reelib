@@ -34,11 +34,11 @@ var INPUT_DATA_ACCEPT_CRITERIA_1 = null;
 var INPUT_DATA_ACCEPT_CRITERIA_2 = { deviceIds: [ '001bc50940100000' ] };
 var INPUT_DATA_ACCEPT_CRITERIA_3 = {
   deviceIds: [ '001bc50940100000' ],
-  rssiRange: { minimum: 100, maximum: 200 }
+  rssi: { minimum: 100, maximum: 200 }
 };
 var INPUT_DATA_ACCEPT_CRITERIA_4 = {
   receiverIds: [ '001bc50940800000' ],
-  rssiRange: { minimum: 150 }
+  rssi: { minimum: 150 }
 };
 var INPUT_DATA_REJECT_CRITERIA_1 = null;
 var INPUT_DATA_REJECT_CRITERIA_2 = { receiverIds: [ '001bc50940800000' ] };

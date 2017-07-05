@@ -228,7 +228,7 @@ Returns whether the given event meets the accept criteria while not meeting the 
     {
       deviceIds: [ /* IDs which meet the criteria */ ],
       receiverIds: [ /* IDs which meet the criteria */ ],
-      rssiRange: { minimum: #, maximum: # }
+      rssi: { minimum: #, maximum: # }
     }
 
 Not all of the above properties need to be included.  Note that no event can meet an empty criteria of {}!  To ignore either or both the accept/reject criteria, set these to _null_ instead.
