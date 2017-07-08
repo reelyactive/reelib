@@ -25,6 +25,9 @@ var INPUT_DATA_VALID_OBJECT = { type: identifier.ADVA48,
 var INPUT_DATA_VALID_STRING = 'fee150bada55';
 var INPUT_DATA_NULL = null;
 var INPUT_DATA_EMPTY = {};
+var INPUT_DATA_ID_ARRAY_1 = [ '7265656c794163746976652055554944' ];
+var INPUT_DATA_ID_ARRAY_2 = [ '7265656c79416374697665205555494400000000' ];
+var INPUT_DATA_ID_ARRAY_3 = [ '001bc5094' ];
 
 // Expected outputs for the scenario
 var EXPECTED_DATA_EUI64 = { type: identifier.EUI64,
@@ -46,6 +49,8 @@ var EXPECTED_DATA_VALID_OBJECT = true;
 var EXPECTED_DATA_VALID_STRING = true;
 var EXPECTED_DATA_NULL = false;
 var EXPECTED_DATA_EMPTY = false;
+var EXPECTED_DATA_MATCH = true;
+var EXPECTED_DATA_NO_MATCH = false;
 
 
 // Describe the scenario
@@ -139,6 +144,41 @@ describe('identifier', function() {
   it('should assert that an empty identifier is invalid', function() {
     assert.strictEqual(identifier.isValid(INPUT_DATA_EMPTY),
                        EXPECTED_DATA_EMPTY);
+  });
+
+  // Test the isMatch function with two identical identifier strings
+  it('should assert that two identical strings are a match', function() {
+    assert.strictEqual(identifier.isMatch(INPUT_DATA_EUI64,
+                                          INPUT_DATA_EUI64),
+                       EXPECTED_DATA_MATCH);
+  });
+
+  // Test the isMatch function with two different identifier strings
+  it('should assert that two different strings are no match', function() {
+    assert.strictEqual(identifier.isMatch(INPUT_DATA_EUI64,
+                                          INPUT_DATA_ADVA48),
+                       EXPECTED_DATA_NO_MATCH);
+  });
+
+  // Test the isMatch function with two identical identifier arrays
+  it('should assert that two identical arrays are a match', function() {
+    assert.strictEqual(identifier.isMatch(INPUT_DATA_ID_ARRAY_1,
+                                          INPUT_DATA_ID_ARRAY_1),
+                       EXPECTED_DATA_MATCH);
+  });
+
+  // Test the isMatch function with two matching identifier arrays
+  it('should assert that two matching arrays are a match', function() {
+    assert.strictEqual(identifier.isMatch(INPUT_DATA_ID_ARRAY_1,
+                                          INPUT_DATA_ID_ARRAY_2),
+                       EXPECTED_DATA_MATCH);
+  });
+
+  // Test the isMatch function with two non-matching identifier arrays
+  it('should assert that two non-matching arrays are no match', function() {
+    assert.strictEqual(identifier.isMatch(INPUT_DATA_ID_ARRAY_1,
+                                          INPUT_DATA_ID_ARRAY_3),
+                       EXPECTED_DATA_NO_MATCH);
   });
 
 });

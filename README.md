@@ -133,6 +133,10 @@ Create a new identifier object of the given type from the given identifier objec
 
 Returns whether the given identifier (as string or object) is valid or not.
 
+### isMatch(identifiers1, identifiers2)
+
+Returns whether there is a common identifier among the two inputs or not.  Each input can be either an identifier string or and array of identifier strings.
+
 
 Tiraid library
 --------------
